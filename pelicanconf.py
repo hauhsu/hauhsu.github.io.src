@@ -41,4 +41,3 @@ DEFAULT_METADATA = {
 DELETE_OUTPUT_DIRECTORY = False
 
 THEME = "pelican-themes/clean-blog"
-LOAD_CONTENT_CACHE = False
