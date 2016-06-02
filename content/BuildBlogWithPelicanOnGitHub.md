@@ -105,7 +105,9 @@ Done: Processed 1 article, 0 drafts, 0 pages and 0 hidden pages in 0.23 seconds.
 cd /Users/howardxu/Test/pelican/output && python -m pelican.server
 ```
 沒意外的話你可以在瀏覽器的網址列輸入：[localhost:8000](localhost:8000)，就會看到你的網站。
-![網站預覽](/Users/howardxu/Desktop/Screen Shot 2016-06-01 at 4.42.39 PM.png)
+
+<img src="images/local_host_preview.png"  style="width: 80%; height: 80%"/>
+
 要關掉 http server 可以回到終端機，按下 `ctrl + c`
 
 ### 建立 Pelican 專案的 repo 
@@ -145,7 +147,7 @@ $ git push github gh-pages:master
 
 下面這張圖是各個 repo 之間的關係圖。方形匡起來的代表一個 repo；箭頭代表 branch；虛線代表 local  端的 branch 和 remote 端同步。
 
-![](/Users/howardxu/Desktop/repo_relationship.png)  
+<img src="images/repo_relationship.png" />
 
 在 local 端會有兩個 branch：master & ph-pages，ph-pages 是 `ghp-import` 幫我們建的而且我們不必手動更新這個 branch，而是透過 `ghp-impott output` 這個指令更新。
 

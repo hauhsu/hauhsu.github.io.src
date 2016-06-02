@@ -41,3 +41,5 @@ DEFAULT_METADATA = {
 DELETE_OUTPUT_DIRECTORY = False
 
 THEME = "pelican-themes/clean-blog"
+
+STATIC_PATHS = ['images']
