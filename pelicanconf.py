@@ -43,3 +43,4 @@ DELETE_OUTPUT_DIRECTORY = False
 THEME = "pelican-themes/clean-blog"
 
 STATIC_PATHS = ['images']
+DISQUS_SITENAME = 'hautolive'
