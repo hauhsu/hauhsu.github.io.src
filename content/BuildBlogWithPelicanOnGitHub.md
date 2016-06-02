@@ -11,9 +11,10 @@ Status: published
 ## GitHub Pages 簡介
 GitHub 有提供一個簡單的方法讓使用者架設個人網站 (User Pages) 或專案網站 (Project Pages)。
 這篇主要是講個人網站的部分，其實也就是這個網站怎麼架的:p。  
-要使用 GitHub 的 User Page，首先要在 GitHub 上建立一個 repo，而且名稱必須是 \<username\>.github.io。
+要使用 GitHub 的 User Page，首先要在 GitHub 上建立一個 repo，而且名稱必須是
+&lt;username&gt;.github.io。
 我的帳號是hauhsu，所以 repo 名稱就是 hauhsu.github.io。
-接著只要將靜態網頁放到這個 repo 的 master branch，就可以透過網址 http://\<username\>.github.io 連到你的網站，所以這個網站的網址才會是 http://hauhsu.github.io。
+接著只要將靜態網頁放到這個 repo 的 master branch，就可以透過網址 http://&lt;username>.github.io 連到你的網站，所以這個網站的網址才會是 http://hauhsu.github.io。
 
 ## Pelican 文件的說明...不太清楚
 Pelican 產生出來的靜態網頁會放在 output 資料夾，所以只要把 output 內的東西放到你個人網站的 repo 的 master branch 就行了。
@@ -122,10 +123,10 @@ $ git commit -m "first commit"
 注意我們並沒有將 output 資料夾加入，因為那個資料夾每次用 Pelican 都會改變，並不是我們網站專案的 source。
 
 ### 在 GitHub 上建 repo
-到 GitHub 網頁建立兩個 repo，一個是放 source 的，一個就是一開始提到的 GitHub 個人網站的 repo。個人網站的 repo 名稱是固定的，也就是 \<username\>.github.io，而放 source 的 repo 我把它叫做 \<username\>.github.io.src。
+到 GitHub 網頁建立兩個 repo，一個是放 source 的，一個就是一開始提到的 GitHub 個人網站的 repo。個人網站的 repo 名稱是固定的，也就是 &lt;username&gt;.github.io，而放 source 的 repo 我把它叫做 &lt;username&gt;.github.io.src。
 
 ### 將 GitHub 的 repo 加入 Pelican project repo 的 remote
-回到終端機，確認 working directory 是在剛剛建立的 blog 資料夾。接著要將我們的 Pelican repo 加入兩個 remote，一個是 origin，也就是我們的\<username\>.github.io.src；另一個是 github，也就是我們個人網頁的 repo。 
+回到終端機，確認 working directory 是在剛剛建立的 blog 資料夾。接著要將我們的 Pelican repo 加入兩個 remote，一個是 origin，也就是我們的&lt;username&gt;.github.io.src；另一個是 github，也就是我們個人網頁的 repo。 
 
 ```
 $ cd ~/blog
@@ -143,7 +144,7 @@ $ git push github gh-pages:master
 
 還記得  ghp-import 會將 output 的資料更新至 gh-pages 的 branch（如果沒有這個 branch 則會自動幫你建立），所以我們只要把 gh-pages 的內容上傳到 github 的 master，就等於是把 output 資料夾的東西丟上去了！
 
-現在用瀏覽器輸入你的個人網頁網址，也就是 http://\<username\>.github.io，應該就會看到你的網頁有內容囉！
+現在用瀏覽器輸入你的個人網頁網址，也就是 http://&lt;username&gt;.github.io，應該就會看到你的網頁有內容囉！
 
 下面這張圖是各個 repo 之間的關係圖。方形匡起來的代表一個 repo；箭頭代表 branch；虛線代表 local  端的 branch 和 remote 端同步。
 
