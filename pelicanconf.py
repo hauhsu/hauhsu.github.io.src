@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Hsu Hau'
 SITENAME = u'HauToLive'
-SITEURL = 'http://hauhsu.github.io'
+SITEURL = ''
 
 PATH = 'content'
 
@@ -45,3 +45,5 @@ GITHUB_URL = 'http://github.com/hauhsu'
 TWITTER_URL = 'http://twitter.com/hau_hsu'
 FACEBOOK_URL = 'http://facebook.com/howard0617'
 
+STATIC_PATHS = ['images']
+DISQUS_SITENAME = 'hautolive'
