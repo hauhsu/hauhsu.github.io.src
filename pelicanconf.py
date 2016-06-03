@@ -38,6 +38,10 @@ DEFAULT_METADATA = {
     'status': 'draft',
 }
 
-DELETE_OUTPUT_DIRECTORY = False
 
+# Theme
 THEME = "pelican-themes/clean-blog"
+GITHUB_URL = 'http://github.com/hauhsu'
+TWITTER_URL = 'http://twitter.com/hau_hsu'
+FACEBOOK_URL = 'http://facebook.com/howard0617'
+
