@@ -46,4 +46,3 @@ TWITTER_URL = 'http://twitter.com/hau_hsu'
 FACEBOOK_URL = 'http://facebook.com/howard0617'
 
 STATIC_PATHS = ['images']
-DISQUS_SITENAME = 'hautolive'
