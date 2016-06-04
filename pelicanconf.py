@@ -19,15 +19,15 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+SOCIAL = (('github', 'https://github.com/hauhsu'),
+          ('facebook','https://facebook.com/howard0617'),)
+
 # Blogroll
 # LINKS = (('Pelican', 'http://getpelican.com/'),
 #          ('Python.org', 'http://python.org/'),
 #          ('Jinja2', 'http://jinja.pocoo.org/'),
 #          ('You can modify those links in your config file', '#'),)
 
-# Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 10
 
@@ -40,9 +40,6 @@ DEFAULT_METADATA = {
 
 
 # Theme
-THEME = "pelican-themes/clean-blog"
-GITHUB_URL = 'http://github.com/hauhsu'
-TWITTER_URL = 'http://twitter.com/hau_hsu'
-FACEBOOK_URL = 'http://facebook.com/howard0617'
+THEME = "pelican-themes/pelican-clean-blog"
 
 STATIC_PATHS = ['images']
