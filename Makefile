@@ -85,6 +85,8 @@ else
 endif
 
 
+preview: html serve
+
 devserver:
 ifdef PORT
 	$(BASEDIR)/develop_server.sh restart $(PORT)
