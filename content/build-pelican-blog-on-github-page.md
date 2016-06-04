@@ -1,12 +1,16 @@
 Title: 用 Pelican 在 GitHub 上建立 Blog
 Date: 2016-06-02 16:00
+Modified: 2016-06-04 10:22
 Category: Note
 Tags: pelican, blog, git, python 
 Slug: build-blog-on-github-pages-using-pelican 
 Author: Hau Hsu
-Summary: Build blog on GitHub Pages using Pelican
 Status: published
 
+這篇教學會在你的電腦上建立一個 Pelican 的專案，並且用 git repo
+來做版本管理。而在 GitHub 上我們會建立兩個 repo，一個用來存 Pelican
+專案的程式碼，讓我們可以在不同的電腦上編輯和發布文章；另一個 repo 是 GitHub User
+Page，用來放架好的網站。
 
 ## GitHub Pages 簡介
 GitHub 有提供一個簡單的方法讓使用者架設個人網站 (User Pages) 或專案網站 (Project Pages)。
@@ -20,7 +24,7 @@ GitHub 有提供一個簡單的方法讓使用者架設個人網站 (User Pages)
 Pelican 產生出來的靜態網頁會放在 output 資料夾，所以只要把 output 內的東西放到你個人網站的 repo 的 master branch 就行了。
 在 Pelican 的官方文件中，[有一段](http://docs.getpelican.com/en/3.6.3/tips.html#publishing-to-github  )是說明如何將產生出來的靜態網頁放上 Github pages。文件的做法是利用 [ghp-import](https://github.com/davisp/ghp-import) 這個小工具，他可以幫你把某個資料夾的內容更新到當本地端 repo 的 gh-pages branch。
 
-``` 
+``` shell
 $ pelican content -o output -s pelicanconf.py
 $ ghp-import output
 $ git push git@github.com:<username>/<username>.github.io.git gh-pages:master
@@ -38,14 +42,14 @@ $ git push git@github.com:<username>/<username>.github.io.git gh-pages:master
 ### 建立 Pelican project
 先在你想要建立專案的地方建立一個資料夾，我先假設你要建在家目錄下的 blog 資料夾： 
 
-```
+``` shell
 $ mkdir ~/blog
 $ cd ~/blog
 $ pelican-quickstart
 ```
 接著會有一個簡單的終端機互動介面，給你一些選項讓你設定。以下是我的輸入，有些資訊請記得根據自己的需要修改，中括弧內的字是預設的選項，如果我沒有打任何字就是直接按 enter 使用預設值：
 
-```
+``` 
 Welcome to pelican-quickstart v3.6.3.
 
 This script will help you create a new Pelican-based website.
@@ -61,7 +65,7 @@ needed by Pelican.
 ```
 注意這邊要輸入你自己的 GitHub User Page 的網址
 
-```
+``` 
 > Do you want to specify a URL prefix? e.g., http://example.com   (Y/n) y                       
 > What is your URL prefix? (see above example; no trailing slash) http://hauhsu.github.io 
 > Do you want to enable article pagination? (Y/n) y
@@ -77,7 +81,7 @@ needed by Pelican.
 ```
 當問到你會不會用 GitHub Pages 的時候要選 y
 
-```
+``` shell
 > Do you want to upload your website using GitHub Pages? (y/N) y
 > Is this your personal page (username.github.io)? (y/N) y
 Done. Your new project is available at ~/blog 
@@ -85,7 +89,7 @@ Done. Your new project is available at ~/blog
 
 然後隨便 po 一篇文，也就是在 content 資料夾中建立一個文件叫 `first_post.md` ，並把以下的內容貼到裡面。
 
-```
+``` 
 Title: My super title
 Date: 2016-05-30 22:34
 Category: Python
@@ -100,7 +104,7 @@ This is the content of my super blog post.
 
 接著用 Pelican 給的 makefile 生出靜態網頁，並且開啟簡單的 http 伺服器讓你可以透過瀏覽器預覽結果：
 
-```
+``` shell
 $ make html && make serve
 Done: Processed 1 article, 0 drafts, 0 pages and 0 hidden pages in 0.23 seconds.
 cd /Users/howardxu/Test/pelican/output && python -m pelican.server
@@ -114,7 +118,7 @@ cd /Users/howardxu/Test/pelican/output && python -m pelican.server
 ### 建立 Pelican 專案的 repo 
 現在我們為這個 project 建立一個 repo，並且提交 pelican 專案中的檔案和第一篇文章的 markdown 檔：
 
-```
+``` shell
 $ git init
 $ git add Makefile develop_server.sh *.py content/
 $ git commit -m "first commit"
@@ -130,14 +134,14 @@ $ git commit -m "first commit"
 
 ```
 $ cd ~/blog
-$ git remote add origin <username>.github.io.src
-$ git remote add github <username>.github.io
+$ git remote add origin git@github.com:<username>/<username>.github.io.src.git
+$ git remote add github git@github.com:<username>/<username>.github.io.git 
 ```
 
 ### 發布文章到 GitHub User Page
 現在我們可以照著 Pelican 文件的方法，將 output 的檔案上傳到 GitHub。由於我們已經將 GitHub User Page 的 repo 加入 remote，所以可以少打一些字：
 
-```
+``` shell
 $ ghp-import output
 $ git push github gh-pages:master
 ```
@@ -150,15 +154,13 @@ $ git push github gh-pages:master
 
 <img src="images/repo_relationship.png" />
 
-在 local 端會有兩個 branch：master & ph-pages，ph-pages 是 `ghp-import` 幫我們建的而且我們不必手動更新這個 branch，而是透過 `ghp-impott output` 這個指令更新。
+在 local 端會有兩個 branch：master & ph-pages，ph-pages 是 `ghp-import` 幫我們建的而且我們不必手動更新這個 branch，而是透過 `ghp-import output` 這個指令更新。
 
-### 上傳 source 的更新
-如果想要在另一台電腦上寫文章和發布，兩台電腦的 Pelican project 必須同步，這時候就可以利用 <username>.github.io.src。要將現在這台電腦的 Pelican project 更新至 GitHub，可以提交以後直接下 `$ git push origin` 的指令，當然如果 GitHub 上有還沒有同步的內容，必須先 pull 下來、merge 以後再 push（基本的 git 操作）。
 
 ### 改寫 Makefile 讓發布文章更容易
 Pelican 自動產生的 makefile 中有一個 github 的 target，這個是用在發佈 GitHub Project  Page 的。現在因為我們是 User Page，所以我們來小小改寫一下，讓他符合我們的發佈動作。打開 Makefile 之後找到 github 這個 target：
 
-```
+``` makefile
 github: publish
 	ghp-import -m "Generate Pelican site" -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)
 	git push origin $(GITHUB_PAGES_BRANCH)
@@ -166,10 +168,45 @@ github: publish
 
 把它改成：
 
-```
+``` makefile
 github: publish
 	ghp-import -m "Generate Pelican site" output
 	git push github gh-pages:master
 ```
 存檔。
 之後要發布文章，就只要下 `$ make github` 就可以囉！
+
+### 在另一台電腦上編輯/發布文章
+
+如果想要在另一台電腦上寫文章和發布，兩台電腦的 Pelican project 必須同步，而且要將上面提到的關係在另一台電腦上重建。
+
+<img src="images/repo_relationship_2_computers.png" />
+
+
+首先將現在這台電腦的 Pelican project 更新至 GitHub，可以提交以後直接下 
+`$ git push origin` 的指令。
+
+在另一台電腦上，我們先將 &lt;username&gt;.github.io.src clone 下來：
+
+``` shell
+$ git clone <username>.github.io.src
+```
+
+接著我們要重建每個 repo 間的關係。
+首先將 &lt;username&gt;.github.io 加入 remote 並且 fetch：
+
+``` shell
+$ git remote add github git@github.com:<username>/<username>.github.io.git 
+$ git fetch github
+```
+
+讓 ph-pages 這個 branch 追蹤 &lt;username&gt;.github.io.git 的 master branch：
+
+``` shell
+$ git branch --track gh-pages github/master
+```
+
+到這邊我們就已經在另一台電腦上把上面那張 repo 關係圖重建完成。
+要預覽或發布文章，一樣用之前的 make 指令即可！
+
+
