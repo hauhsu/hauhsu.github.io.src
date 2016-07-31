@@ -19,15 +19,15 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+SOCIAL = (('github', 'https://github.com/hauhsu'),
+          ('facebook','https://facebook.com/howard0617'),)
+
 # Blogroll
 # LINKS = (('Pelican', 'http://getpelican.com/'),
 #          ('Python.org', 'http://python.org/'),
 #          ('Jinja2', 'http://jinja.pocoo.org/'),
 #          ('You can modify those links in your config file', '#'),)
 
-# Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 10
 
@@ -38,9 +38,8 @@ DEFAULT_METADATA = {
     'status': 'draft',
 }
 
-DELETE_OUTPUT_DIRECTORY = False
 
-THEME = "pelican-themes/clean-blog"
+# Theme
+THEME = "pelican-themes/pelican-clean-blog"
 
 STATIC_PATHS = ['images']
-DISQUS_SITENAME = 'hautolive'
