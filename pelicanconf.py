@@ -41,10 +41,14 @@ DEFAULT_METADATA = {
     'status': 'draft',
 }
 
-
 # Theme
 THEME = 'themes/pelican-alchemy/alchemy' 
 PYGMENTS_STYLE = 'autumn'
 SITEIMAGE = '/images/test.jpg'
 SITESUBTITLE = 'Hsu Hau\'s Life'
+HIDE_AUTHORS = True
+ICONS = (
+    ('github', 'https://github.com/hauhsu'),
+    ('facebook','https://facebook.com/howard0617'),
+)
 
