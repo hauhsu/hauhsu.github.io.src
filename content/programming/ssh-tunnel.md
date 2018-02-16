@@ -1,6 +1,5 @@
 Title: SSH 隧道
 Date: 2016-07-31 9:00
-Category: Note
 Tags: ssh 
 Slug: ssh-tunnel 
 Author: Hau Hsu

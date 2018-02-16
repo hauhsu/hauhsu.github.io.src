@@ -1,11 +1,15 @@
 Title: 用 Pelican 在 GitHub 上建立 Blog
 Date: 2016-06-02 16:00
 Modified: 2016-06-04 10:22
-Category: Note
 Tags: pelican, blog, git, python 
 Slug: build-blog-on-github-pages-using-pelican 
 Author: Hau Hsu
 Status: published
+Summary: 如何用 Pelican 在 Github Pages 建部落格
+
+Note on 2018/2/16:
+發了三篇文、荒廢了將近兩年後再回來整理，發現我好像把這件事弄得太複雜了。
+之後再 po 一篇比較正確的好了。
 
 這篇教學會在你的電腦上建立一個 Pelican 的專案，並且用 git repo
 來做版本管理。而在 GitHub 上我們會建立兩個 repo，一個用來存 Pelican

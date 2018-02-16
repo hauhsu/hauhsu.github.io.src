@@ -1,7 +1,6 @@
 Title: Scala 的簡單檔案讀寫練習
 Date: 2016-09-20
 Modified: 2016-09-20
-Category: Note
 Tags: scala
 Slug: scala-simple-file-read-write 
 Author: Hau Hsu
