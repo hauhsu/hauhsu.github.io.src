@@ -47,5 +47,4 @@ THEME = 'themes/pelican-alchemy/alchemy'
 PYGMENTS_STYLE = 'autumn'
 SITEIMAGE = '/images/test.jpg'
 SITESUBTITLE = 'Hsu Hau\'s Life'
-DISQUS_SITENAME = 'hautolive'
 
