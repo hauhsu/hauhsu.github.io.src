@@ -7,6 +7,7 @@ SITENAME = u'HauToLive'
 SITEURL = ''
 
 PATH = 'content'
+STATIC_PATHS = ['images']
 
 TIMEZONE = 'Asia/Taipei'
 
@@ -22,6 +23,7 @@ AUTHOR_FEED_RSS = None
 SOCIAL = (('github', 'https://github.com/hauhsu'),
           ('facebook','https://facebook.com/howard0617'),)
 
+
 # Blogroll
 # LINKS = (('Pelican', 'http://getpelican.com/'),
 #          ('Python.org', 'http://python.org/'),
@@ -32,7 +34,8 @@ SOCIAL = (('github', 'https://github.com/hauhsu'),
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+# RELATIVE_URLS = True
+
 
 DEFAULT_METADATA = {
     'status': 'draft',
@@ -40,6 +43,9 @@ DEFAULT_METADATA = {
 
 
 # Theme
-THEME = "pelican-themes/pelican-clean-blog"
+THEME = 'themes/pelican-alchemy/alchemy' 
+PYGMENTS_STYLE = 'autumn'
+SITEIMAGE = '/images/test.jpg'
+SITESUBTITLE = 'Hsu Hau\'s Life'
+DISQUS_SITENAME = 'hautolive'
 
-STATIC_PATHS = ['images']
