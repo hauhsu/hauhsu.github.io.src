@@ -5,6 +5,7 @@ Tags: scala
 Slug: scala-simple-file-read-write 
 Author: Hau Hsu
 Status: published
+Summary: Scala 簡單練習筆記
 
 
 初學 scala，覺得困難。

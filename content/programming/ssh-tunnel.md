@@ -4,6 +4,7 @@ Tags: ssh
 Slug: ssh-tunnel 
 Author: Hau Hsu
 Status: published
+Summary: 透過 ssh tunnel + port forwarding 連到遠端機器
 
 ## SSH 埠映射 (SSH port forwarding)
 
