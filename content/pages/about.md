@@ -1,10 +1,13 @@
-Title: About
-Date: 2016-09-30
-Authors: Hau Hsu
-Status: published
+Title: About Me  
+Date: 2018-02-16  
+Author: Hau Hsu  
+Status: published  
 
+高雄人，現居新竹的小小工程師。電機系出身，喜歡研究電腦科學相關的領域。  
+興趣廣泛，目前正在學編譯器、嵌入式作業系統、以及 functional programming（以 Haskell
+為學習語言）。 
 
-<img src="{filename}/images/prof.jpg" alt="Drawing" style="width: 200px;"/>
-
-一個小小書生，喜歡研究程式魔法；也是一介鄉民，到處看著熱鬧，跟著發表些意見。
+Hi, I am Hsu Hau. I was born in Taiwan, Kaohsiung and is living in Hsinchu now.
+I love Computer Science and is learning compiler, embedded OS and functional
+programming (using Haskell).
 
