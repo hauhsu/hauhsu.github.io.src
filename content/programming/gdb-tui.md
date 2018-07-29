@@ -3,7 +3,7 @@ Date: 2018-03-15
 Tags: gdb
 Slug: gdb-tui
 Author: Hsu Hau
-Status: draft
+Status: published
 Summary:  GDB 的文字使用者介面介紹和教學
 
 一直以來我都覺得 GDB 世界難用，要記一堆指令，要看程式跑到哪裡只能用 list
